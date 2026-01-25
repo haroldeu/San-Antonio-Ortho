@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:gh": "set NEXT_PUBLIC_BASE_PATH=/San-Antonio-Ortho&& next build",
     "postbuild": "node scripts/sync-out-to-docs.mjs",
     "start": "next start",
     "lint": "next lint"
