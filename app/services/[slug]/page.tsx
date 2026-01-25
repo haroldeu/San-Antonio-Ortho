@@ -6,6 +6,10 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
+export function generateStaticParams() {
+  return services.map((service) => ({ slug: service.slug }));
+}
+
 export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
   const service = services.find((item) => item.slug === params.slug);
 

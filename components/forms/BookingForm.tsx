@@ -51,7 +51,7 @@ export function BookingForm() {
       await new Promise((resolve) => setTimeout(resolve, 800));
       setStatus("success");
       setFormData(initialState);
-    } catch (error) {
+    } catch {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
     }

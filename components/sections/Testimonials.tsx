@@ -26,7 +26,7 @@ export function Testimonials() {
           {testimonials.map((item) => (
             <motion.div key={item.id} variants={fadeUp} className="min-w-[260px] flex-1">
               <Card className="h-full">
-                <p className="text-sm text-muted">"{item.content}"</p>
+                <p className="text-sm text-muted">&ldquo;{item.content}&rdquo;</p>
                 <div className="mt-4">
                   <p className="font-heading text-lg font-semibold text-slate">{item.name}</p>
                   <p className="text-xs uppercase tracking-[0.2em] text-muted">{item.role}</p>
