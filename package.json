@@ -1,4 +1,4 @@
-﻿{
+{
   "name": "st-anthony-dental",
   "private": true,
   "version": "0.1.0",
@@ -12,9 +12,9 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.19",
     "lucide-react": "^0.460.0",
-    "next": "14.2.5",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "next": "^14.2.35",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {

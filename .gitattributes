@@ -9,3 +9,15 @@
 *.svg binary
 *.ico binary
 *.webp binary
+*.mp4 binary
+*.mp3 binary
+
+# Keep these consistent
+*.js text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+
