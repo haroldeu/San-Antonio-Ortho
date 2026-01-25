@@ -1,0 +1,58 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #9705ca;
+  --color-primary-deep: #7a03a4;
+  --color-lavender: #d1a2dc;
+  --color-lilac: #f6efff;
+  --color-gold: #d7a862;
+  --color-slate: #334155;
+  --color-muted: #64748b;
+  --color-white: #ffffff;
+  --color-border: #e9d7f2;
+  --font-heading: "Playfair Display";
+  --font-body: "Inter";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+  color: var(--color-slate);
+  background: radial-gradient(circle at top, rgba(151, 5, 202, 0.08), transparent 55%),
+    radial-gradient(circle at 20% 20%, rgba(209, 162, 220, 0.35), transparent 40%),
+    var(--color-lilac);
+  min-height: 100%;
+}
+
+body {
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(151, 5, 202, 0.18);
+}

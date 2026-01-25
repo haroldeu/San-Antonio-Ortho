@@ -1,0 +1,11 @@
+# Normalize line endings
+* text=auto
+
+# Explicitly keep common formats stable
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+*.ico binary
+*.webp binary
