@@ -6,30 +6,33 @@ import { Footer } from "@/components/shared/Footer";
 
 const headingFont = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-heading"
+  variable: "--font-heading",
 });
 
 const bodyFont = Inter({
   subsets: ["latin"],
-  variable: "--font-body"
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
   title: "St. Anthony Dental Clinic",
-  description: "Premium dental care with a calm, modern, and trustworthy experience.",
+  description:
+    "Premium dental care with a calm, modern, and trustworthy experience.",
   icons: {
-    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/logo.png`
-  }
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/logo.png`,
+  },
 };
 
 export default function RootLayout({
-  children
+  children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${headingFont.variable} ${bodyFont.variable} font-body`}> 
+    <html lang="en" className="overflow-x-hidden">
+      <body
+        className={`${headingFont.variable} ${bodyFont.variable} font-body overflow-x-hidden`}
+      >
         <Navbar />
         <main>{children}</main>
         <Footer />
