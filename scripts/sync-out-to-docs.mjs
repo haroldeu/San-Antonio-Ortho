@@ -1,4 +1,5 @@
 import { cp, mkdir, readdir, stat, unlink } from "node:fs/promises";
+import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,6 +28,7 @@ async function main() {
   await cp(outDir, docsDir, { recursive: true, force: true });
   await mkdir(docsImagesDir, { recursive: true });
   await cp(publicImagesDir, docsImagesDir, { recursive: true });
+  await writeFile(path.join(docsDir, ".nojekyll"), "");
 }
 
 main().catch((error) => {
