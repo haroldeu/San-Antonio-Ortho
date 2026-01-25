@@ -1,4 +1,4 @@
-import { cp, mkdir, rm, stat } from "node:fs/promises";
+import { cp, mkdir, readdir, stat, unlink } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,6 +6,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
 const outDir = path.join(projectRoot, "out");
 const docsDir = path.join(projectRoot, "docs");
+const publicImagesDir = path.join(projectRoot, "public", "images");
+const docsImagesDir = path.join(docsDir, "images");
 
 async function main() {
   try {
@@ -14,9 +16,17 @@ async function main() {
     throw new Error("Missing 'out' directory. Run `npm run build` first.");
   }
 
-  await rm(docsDir, { recursive: true, force: true });
   await mkdir(docsDir, { recursive: true });
-  await cp(outDir, docsDir, { recursive: true });
+  const docsEntries = await readdir(docsDir);
+  await Promise.all(
+    docsEntries.map(async (entry) => {
+      const fullPath = path.join(docsDir, entry);
+      await unlink(fullPath).catch(() => {});
+    }),
+  );
+  await cp(outDir, docsDir, { recursive: true, force: true });
+  await mkdir(docsImagesDir, { recursive: true });
+  await cp(publicImagesDir, docsImagesDir, { recursive: true });
 }
 
 main().catch((error) => {
