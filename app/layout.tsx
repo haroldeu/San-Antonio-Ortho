@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "St. Anthony Dental Clinic",
   description: "Premium dental care with a calm, modern, and trustworthy experience.",
   icons: {
-    icon: "/images/logo.png"
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/logo.png`
   }
 };
 

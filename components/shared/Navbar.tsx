@@ -13,6 +13,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 12);
@@ -46,7 +47,7 @@ export function Navbar() {
           aria-label="St. Anthony Dental Clinic"
         >
           <Image
-            src="/images/logo.png"
+            src={`${basePath}/images/logo.png`}
             alt="St. Anthony Dental Clinic"
             width={44}
             height={44}
@@ -127,7 +128,7 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Image
-              src="/images/logo.png"
+              src={`${basePath}/images/logo.png`}
               alt="St. Anthony Dental Clinic"
               width={36}
               height={36}
