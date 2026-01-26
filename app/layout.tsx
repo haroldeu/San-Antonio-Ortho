@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
+import { basePath } from "@/lib/basePath";
 
 const headingFont = Playfair_Display({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Premium dental care with a calm, modern, and trustworthy experience.",
   icons: {
-    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/logo.png`,
+    icon: `${basePath}/images/logo.png`,
   },
 };
 

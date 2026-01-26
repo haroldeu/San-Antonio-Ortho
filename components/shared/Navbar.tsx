@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { basePath } from "@/lib/basePath";
 import { cn } from "@/lib/cn";
 import { navigationLinks } from "@/lib/constants";
 
@@ -14,7 +15,6 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

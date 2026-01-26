@@ -6,11 +6,10 @@ import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { teamMembers } from "@/data/team";
+import { basePath } from "@/lib/basePath";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
 export function TeamPreview() {
-  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
-
   return (
     <section className="py-16 md:py-24">
       <Container>
