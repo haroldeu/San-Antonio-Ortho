@@ -29,12 +29,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="overflow-x-hidden">
+    <html lang="en">
       <body
-        className={`${headingFont.variable} ${bodyFont.variable} font-body overflow-x-hidden`}
+        className={`${headingFont.variable} ${bodyFont.variable} font-body`}
       >
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
       </body>
     </html>
