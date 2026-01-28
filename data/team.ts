@@ -3,9 +3,9 @@
 export const teamMembers: TeamMember[] = [
   {
     id: "team-1",
-    name: "Dr. Ana Lorenzo",
+    name: "Dra. Kitchie Sazon",
     role: "Lead Dentist",
-    bio: "Known for gentle care and patient education, Dr. Ana focuses on preventive and restorative treatments.",
+    bio: "Known for gentle care and patient education, Dra. Kitchie focuses on preventive and restorative treatments.",
     experience: "12 years experience",
     image: "/images/team-1.jpg",
   },

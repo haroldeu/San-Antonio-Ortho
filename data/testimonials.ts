@@ -7,7 +7,7 @@ export const testimonials: Testimonial[] = [
     role: "Teacher",
     content:
       "They explained every step and made me feel at ease. The clinic feels premium but still warm and welcoming.",
-    rating: 5
+    rating: 5,
   },
   {
     id: "testi-2",
@@ -15,14 +15,14 @@ export const testimonials: Testimonial[] = [
     role: "Entrepreneur",
     content:
       "Best cleaning experience so far. The team is professional, and the results are obvious right away.",
-    rating: 5
+    rating: 5,
   },
   {
     id: "testi-3",
-    name: "Aisha P.",
-    role: "Content Creator",
+    name: "John Harold N.",
+    role: "Software Developer",
     content:
       "The staff was so gentle and thoughtful. I appreciate the transparent pricing and follow-up care.",
-    rating: 5
-  }
+    rating: 5,
+  },
 ];
