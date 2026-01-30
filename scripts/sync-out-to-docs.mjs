@@ -11,10 +11,16 @@ const publicImagesDir = path.join(projectRoot, "public", "images");
 const docsImagesDir = path.join(docsDir, "images");
 
 async function main() {
+  if (process.env.VERCEL) {
+    console.log("Skipping docs sync on Vercel.");
+    return;
+  }
+
   try {
     await stat(outDir);
   } catch {
-    throw new Error("Missing 'out' directory. Run `npm run build` first.");
+    console.log("Missing 'out' directory. Skipping docs sync.");
+    return;
   }
 
   await mkdir(docsDir, { recursive: true });
