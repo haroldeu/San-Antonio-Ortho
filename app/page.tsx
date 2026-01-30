@@ -6,13 +6,16 @@ import { TeamPreview } from "@/components/sections/TeamPreview";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { ContactStrip } from "@/components/sections/ContactStrip";
+import { getServices } from "@/lib/services";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const services = await getServices();
+
   return (
     <>
       <Hero />
       <TrustBar />
-      <ServicesGrid />
+      <ServicesGrid services={services} />
       <WhyChooseUs />
       <TeamPreview />
       <Testimonials />

@@ -18,7 +18,9 @@ export default function ContactPage() {
         </div>
         <div className="space-y-6">
           <Card>
-            <h3 className="font-heading text-2xl font-semibold text-slate">Clinic information</h3>
+            <h3 className="font-heading text-2xl font-semibold text-slate">
+              Clinic information
+            </h3>
             <div className="mt-4 space-y-2 text-sm text-muted">
               <p>{clinicInfo.address}</p>
               <p>{clinicInfo.phone}</p>
@@ -27,7 +29,9 @@ export default function ContactPage() {
             </div>
           </Card>
           <Card>
-            <h3 className="font-heading text-2xl font-semibold text-slate">Opening hours</h3>
+            <h3 className="font-heading text-2xl font-semibold text-slate">
+              Opening hours
+            </h3>
             <div className="mt-4 space-y-2 text-sm text-muted">
               {clinicInfo.hours.map((item) => (
                 <p key={item.label}>
@@ -37,8 +41,19 @@ export default function ContactPage() {
             </div>
           </Card>
           <Card>
-            <h3 className="font-heading text-2xl font-semibold text-slate">Map</h3>
-            <div className="mt-4 h-40 rounded-2xl bg-lavender/40" aria-hidden />
+            <h3 className="font-heading text-2xl font-semibold text-slate">
+              Map
+            </h3>
+            <div className="mt-4 overflow-hidden rounded-2xl border border-border">
+              <iframe
+                title="Clinic location map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d967.999852293455!2d122.28759526956006!3d13.958640699153449!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33a287de8c0de969%3A0x453aa4a238ee81cc!2sSt.%20Anthony%20Dental%20Clinic%20(Doc.%20Sazon)!5e0!3m2!1sen!2sph!4v1769750363327!5m2!1sen!2sph"
+                className="h-64 w-full"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
           </Card>
         </div>
       </Container>

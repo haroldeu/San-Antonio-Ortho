@@ -1,11 +1,12 @@
 ﻿"use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Card } from "@/components/ui/Card";
-import { services } from "@/data/services";
+import type { Service } from "@/types";
+import { supabase } from "@/lib/supabaseClient";
 
 const initialState = {
   name: "",
@@ -14,7 +15,7 @@ const initialState = {
   service: "",
   date: "",
   time: "",
-  notes: ""
+  notes: "",
 };
 
 type BookingState = typeof initialState;
@@ -25,15 +26,55 @@ export function BookingForm() {
   const [formData, setFormData] = useState<BookingState>(initialState);
   const [status, setStatus] = useState<BookingStatus>("idle");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [availableServices, setAvailableServices] = useState<Service[]>([]);
+  const [servicesError, setServicesError] = useState<string | null>(null);
 
-  const serviceOptions = useMemo(() => services.map((service) => service.title), []);
+  const serviceOptions = useMemo(
+    () => availableServices.map((service) => ({ slug: service.slug, title: service.title })),
+    [availableServices]
+  );
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadServices = async () => {
+      try {
+        const res = await fetch("/api/services");
+        if (!res.ok) {
+          throw new Error("Unable to load services.");
+        }
+        const data = (await res.json()) as { services?: Service[] };
+        if (isMounted) {
+          setAvailableServices(data.services ?? []);
+        }
+      } catch (err) {
+        if (isMounted) {
+          const message =
+            err instanceof Error ? err.message : "Unable to load services.";
+          setServicesError(message);
+        }
+      }
+    };
+
+    loadServices();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   const handleChange = (field: keyof BookingState, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const validate = () => {
-    if (!formData.name || !formData.email || !formData.phone || !formData.service) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.service ||
+      !formData.date
+    ) {
       setErrorMessage("Please complete all required fields before submitting.");
       return false;
     }
@@ -48,12 +89,36 @@ export function BookingForm() {
 
     setStatus("loading");
     try {
-      await new Promise((resolve) => setTimeout(resolve, 800));
+      const { data: service, error: serviceError } = await supabase
+        .from("service")
+        .select("id")
+        .eq("slug", formData.service)
+        .maybeSingle();
+
+      if (serviceError || !service?.id) {
+        throw new Error("Selected service is not available.");
+      }
+
+      const { error } = await supabase.from("appointment_requests").insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        "service.id": service.id,
+        preferred_date: formData.date,
+        preferred_time: formData.time || null,
+        notes: formData.notes.trim() ? formData.notes.trim() : null,
+      });
+
+      if (error) {
+        throw new Error("Unable to submit your request.");
+      }
+
       setStatus("success");
       setFormData(initialState);
-    } catch {
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage(message);
     }
   };
 
@@ -109,25 +174,32 @@ export function BookingForm() {
             onChange={(event) => handleChange("service", event.target.value)}
             className="w-full rounded-2xl border border-border bg-white/80 px-4 py-3 text-sm text-slate shadow-soft focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
             required
+            disabled={status === "loading" || serviceOptions.length === 0}
           >
             <option value="">Select a service</option>
             {serviceOptions.map((service) => (
-              <option key={service} value={service}>
-                {service}
+              <option key={service.slug} value={service.slug}>
+                {service.title}
               </option>
             ))}
           </select>
+          {servicesError ? (
+            <p className="mt-1 text-xs text-primary-deep" role="status" aria-live="polite">
+              {servicesError}
+            </p>
+          ) : null}
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           <div>
             <label className="text-sm font-medium text-slate" htmlFor="booking-date">
-              Preferred date
+              Preferred date *
             </label>
             <Input
               id="booking-date"
               type="date"
               value={formData.date}
               onChange={(event) => handleChange("date", event.target.value)}
+              required
             />
           </div>
           <div>

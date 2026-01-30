@@ -5,6 +5,9 @@ node_modules
 .next
 out
 
+# next export output
+/docs
+
 # production
 build
 

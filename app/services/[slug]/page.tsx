@@ -1,17 +1,17 @@
 import Link from "next/link";
-import { services } from "@/data/services";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { getServiceBySlug, getServiceSlugs } from "@/lib/services";
 
-export function generateStaticParams() {
-  return services.map((service) => ({ slug: service.slug }));
+export async function generateStaticParams() {
+  return getServiceSlugs();
 }
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = services.find((item) => item.slug === params.slug);
+export default async function ServiceDetailPage({ params }: { params: { slug: string } }) {
+  const service = await getServiceBySlug(params.slug);
 
   if (!service) {
     return (
@@ -47,11 +47,20 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         <Card>
           <h2 className="font-heading text-2xl font-semibold text-slate">What to expect</h2>
           <ul className="mt-4 grid gap-3 text-sm text-muted md:grid-cols-2">
-            {service.highlights.map((highlight) => (
-              <li key={highlight} className="rounded-2xl border border-border bg-white/70 px-4 py-3">
-                {highlight}
+            {service.highlights.length > 0 ? (
+              service.highlights.map((highlight) => (
+                <li
+                  key={highlight}
+                  className="rounded-2xl border border-border bg-white/70 px-4 py-3"
+                >
+                  {highlight}
+                </li>
+              ))
+            ) : (
+              <li className="rounded-2xl border border-border bg-white/70 px-4 py-3">
+                We will personalize your visit and walk you through each step of care.
               </li>
-            ))}
+            )}
           </ul>
         </Card>
         <div className="flex flex-wrap gap-4">

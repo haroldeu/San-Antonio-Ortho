@@ -5,12 +5,13 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Card } from "@/components/ui/Card";
+import { supabase } from "@/lib/supabaseClient";
 
 const initialState = {
   name: "",
   email: "",
   phone: "",
-  message: ""
+  message: "",
 };
 
 type FormState = typeof initialState;
@@ -19,12 +20,13 @@ export function ContactForm() {
   const [formData, setFormData] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     const nextErrors: Partial<FormState> = {};
     if (!formData.name.trim()) nextErrors.name = "Please enter your name.";
     if (!formData.email.includes("@")) nextErrors.email = "Please enter a valid email.";
-    if (!formData.phone.trim()) nextErrors.phone = "Please enter your phone number.";
     if (!formData.message.trim()) nextErrors.message = "Please enter a message.";
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
@@ -34,12 +36,33 @@ export function ContactForm() {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitted(false);
+    setSubmitError(null);
     if (!validate()) return;
-    setSubmitted(true);
-    setFormData(initialState);
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from("contact_messages").insert({
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim() ? formData.phone.trim() : null,
+        message: formData.message.trim(),
+      });
+
+      if (error) {
+        throw new Error("Unable to submit your message.");
+      }
+
+      setSubmitted(true);
+      setFormData(initialState);
+      setErrors({});
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Unable to submit your message.";
+      setSubmitError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -101,9 +124,14 @@ export function ContactForm() {
             <p className="mt-1 text-xs text-primary-deep">{errors.message}</p>
           ) : null}
         </div>
-        <Button type="submit" className="w-full">
-          Send message
+        <Button type="submit" className="w-full" disabled={isSubmitting}>
+          {isSubmitting ? "Sending..." : "Send message"}
         </Button>
+        {submitError ? (
+          <p className="text-sm text-primary-deep" role="status" aria-live="polite">
+            {submitError}
+          </p>
+        ) : null}
         {submitted ? (
           <p className="text-sm text-primary-deep" role="status" aria-live="polite">
             Thank you! We will get back to you within 24 hours.

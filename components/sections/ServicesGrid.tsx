@@ -6,10 +6,14 @@ import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { services } from "@/data/services";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import type { Service } from "@/types";
 
-export function ServicesGrid() {
+type ServicesGridProps = {
+  services: Service[];
+};
+
+export function ServicesGrid({ services }: ServicesGridProps) {
   return (
     <section className="py-16 md:py-24">
       <Container>
