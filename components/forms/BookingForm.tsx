@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Card } from "@/components/ui/Card";
 import type { Service } from "@/types";
-import { supabase } from "@/lib/supabaseClient";
 
 const initialState = {
   name: "",
@@ -89,28 +88,25 @@ export function BookingForm() {
 
     setStatus("loading");
     try {
-      const { data: service, error: serviceError } = await supabase
-        .from("service")
-        .select("id")
-        .eq("slug", formData.service)
-        .maybeSingle();
-
-      if (serviceError || !service?.id) {
-        throw new Error("Selected service is not available.");
-      }
-
-      const { error } = await supabase.from("appointment_requests").insert({
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.trim(),
-        "service.id": service.id,
-        preferred_date: formData.date,
-        preferred_time: formData.time || null,
-        notes: formData.notes.trim() ? formData.notes.trim() : null,
+      const response = await fetch("/api/appointments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          serviceSlug: formData.service,
+          preferredDate: formData.date,
+          preferredTime: formData.time || null,
+          notes: formData.notes.trim() ? formData.notes.trim() : null,
+        }),
       });
+      const result = (await response.json()) as { error?: string };
 
-      if (error) {
-        throw new Error("Unable to submit your request.");
+      if (!response.ok) {
+        throw new Error(result.error ?? "Unable to submit your request.");
       }
 
       setStatus("success");

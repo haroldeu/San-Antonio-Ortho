@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 import type { Database } from "@/types/supabase";
+import { sendAppointmentEmail } from "@/lib/mailer";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -60,7 +61,7 @@ export async function POST(req: Request) {
 
   const { data: service, error: serviceError } = await supabase
     .from("service")
-    .select("id")
+    .select("id, name")
     .eq("slug", serviceSlug)
     .maybeSingle();
 
@@ -91,6 +92,23 @@ export async function POST(req: Request) {
   if (error) {
     return NextResponse.json(
       { error: "Failed to submit appointment request." },
+      { status: 500 }
+    );
+  }
+
+  try {
+    await sendAppointmentEmail({
+      name,
+      email,
+      phone,
+      serviceTitle: service.name,
+      preferredDate: preferred_date,
+      preferredTime: preferred_time,
+      notes,
+    });
+  } catch {
+    return NextResponse.json(
+      { error: "Request saved, but email notification failed." },
       { status: 500 }
     );
   }

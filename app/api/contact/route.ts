@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
 import type { Database } from "@/types/supabase";
+import { sendContactEmail } from "@/lib/mailer";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -65,6 +66,15 @@ export async function POST(req: Request) {
   if (error) {
     return NextResponse.json(
       { error: "Failed to submit message." },
+      { status: 500 }
+    );
+  }
+
+  try {
+    await sendContactEmail({ name, email, phone, message });
+  } catch {
+    return NextResponse.json(
+      { error: "Message saved, but email notification failed." },
       { status: 500 }
     );
   }

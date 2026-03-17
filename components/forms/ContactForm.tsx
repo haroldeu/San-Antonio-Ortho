@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Card } from "@/components/ui/Card";
-import { supabase } from "@/lib/supabaseClient";
 
 const initialState = {
   name: "",
@@ -43,15 +42,22 @@ export function ContactForm() {
     if (!validate()) return;
     setIsSubmitting(true);
     try {
-      const { error } = await supabase.from("contact_messages").insert({
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
         name: formData.name.trim(),
         email: formData.email.trim(),
         phone: formData.phone.trim() ? formData.phone.trim() : null,
         message: formData.message.trim(),
+        }),
       });
+      const result = (await response.json()) as { error?: string };
 
-      if (error) {
-        throw new Error("Unable to submit your message.");
+      if (!response.ok) {
+        throw new Error(result.error ?? "Unable to submit your message.");
       }
 
       setSubmitted(true);

@@ -70,6 +70,15 @@ Environment
 cp .env.example .env
 # edit .env and set DB connection, API keys, and other secrets
 ```
+- Email notifications for form submissions require these variables:
+```bash
+SMTP_HOST=smtp.your-provider.com
+SMTP_PORT=587
+SMTP_USER=your-smtp-username
+SMTP_PASS=your-smtp-password
+MAIL_FROM=clinic@your-domain.com
+MAIL_TO=you@your-domain.com
+```
 
 Database (example)
 - With docker-compose:
