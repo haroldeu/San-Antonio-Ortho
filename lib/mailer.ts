@@ -36,7 +36,9 @@ async function sendMail(subject: string, text: string, html: string) {
   const config = getMailerConfig();
 
   if (!config) {
-    throw new Error("Email is not configured. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, and MAIL_FROM.");
+    throw new Error(
+      "Email is not configured. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, and MAIL_FROM.",
+    );
   }
 
   const transporter = nodemailer.createTransport({

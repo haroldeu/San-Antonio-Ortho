@@ -10,14 +10,11 @@ const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !anonKey) {
   throw new Error(
-    "Missing Supabase env vars. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY."
+    "Missing Supabase env vars. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.",
   );
 }
 
-const supabase = createClient<Database>(
-  supabaseUrl,
-  serviceRoleKey ?? anonKey
-);
+const supabase = createClient<Database>(supabaseUrl, serviceRoleKey ?? anonKey);
 
 type ContactPayload = {
   name?: string;
@@ -35,10 +32,7 @@ export async function POST(req: Request) {
   try {
     payload = (await req.json()) as ContactPayload;
   } catch {
-    return NextResponse.json(
-      { error: "Invalid JSON body." },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
   }
 
   const name = normalize(payload.name);
@@ -52,7 +46,7 @@ export async function POST(req: Request) {
   if (!name || !email || !message) {
     return NextResponse.json(
       { error: "Name, email, and message are required." },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -66,7 +60,7 @@ export async function POST(req: Request) {
   if (error) {
     return NextResponse.json(
       { error: "Failed to submit message." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -75,7 +69,7 @@ export async function POST(req: Request) {
   } catch {
     return NextResponse.json(
       { error: "Message saved, but email notification failed." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 

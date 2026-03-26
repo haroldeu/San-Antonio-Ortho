@@ -25,8 +25,10 @@ export function ContactForm() {
   const validate = () => {
     const nextErrors: Partial<FormState> = {};
     if (!formData.name.trim()) nextErrors.name = "Please enter your name.";
-    if (!formData.email.includes("@")) nextErrors.email = "Please enter a valid email.";
-    if (!formData.message.trim()) nextErrors.message = "Please enter a message.";
+    if (!formData.email.includes("@"))
+      nextErrors.email = "Please enter a valid email.";
+    if (!formData.message.trim())
+      nextErrors.message = "Please enter a message.";
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
   };
@@ -48,10 +50,10 @@ export function ContactForm() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.trim() ? formData.phone.trim() : null,
-        message: formData.message.trim(),
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() ? formData.phone.trim() : null,
+          message: formData.message.trim(),
         }),
       });
       const result = (await response.json()) as { error?: string };
@@ -64,7 +66,8 @@ export function ContactForm() {
       setFormData(initialState);
       setErrors({});
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Unable to submit your message.";
+      const message =
+        err instanceof Error ? err.message : "Unable to submit your message.";
       setSubmitError(message);
     } finally {
       setIsSubmitting(false);
@@ -73,9 +76,16 @@ export function ContactForm() {
 
   return (
     <Card className="space-y-4">
-      <form onSubmit={handleSubmit} className="space-y-4" aria-label="Contact form">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4"
+        aria-label="Contact form"
+      >
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="contact-name">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="contact-name"
+          >
             Full name
           </label>
           <Input
@@ -85,10 +95,15 @@ export function ContactForm() {
             placeholder="e.g., Maria Santos"
             aria-invalid={!!errors.name}
           />
-          {errors.name ? <p className="mt-1 text-xs text-primary-deep">{errors.name}</p> : null}
+          {errors.name ? (
+            <p className="mt-1 text-xs text-primary-deep">{errors.name}</p>
+          ) : null}
         </div>
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="contact-email">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="contact-email"
+          >
             Email address
           </label>
           <Input
@@ -99,10 +114,15 @@ export function ContactForm() {
             placeholder="you@email.com"
             aria-invalid={!!errors.email}
           />
-          {errors.email ? <p className="mt-1 text-xs text-primary-deep">{errors.email}</p> : null}
+          {errors.email ? (
+            <p className="mt-1 text-xs text-primary-deep">{errors.email}</p>
+          ) : null}
         </div>
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="contact-phone">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="contact-phone"
+          >
             Phone number
           </label>
           <Input
@@ -112,10 +132,15 @@ export function ContactForm() {
             placeholder="+63"
             aria-invalid={!!errors.phone}
           />
-          {errors.phone ? <p className="mt-1 text-xs text-primary-deep">{errors.phone}</p> : null}
+          {errors.phone ? (
+            <p className="mt-1 text-xs text-primary-deep">{errors.phone}</p>
+          ) : null}
         </div>
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="contact-message">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="contact-message"
+          >
             Message
           </label>
           <Textarea
@@ -134,12 +159,20 @@ export function ContactForm() {
           {isSubmitting ? "Sending..." : "Send message"}
         </Button>
         {submitError ? (
-          <p className="text-sm text-primary-deep" role="status" aria-live="polite">
+          <p
+            className="text-sm text-primary-deep"
+            role="status"
+            aria-live="polite"
+          >
             {submitError}
           </p>
         ) : null}
         {submitted ? (
-          <p className="text-sm text-primary-deep" role="status" aria-live="polite">
+          <p
+            className="text-sm text-primary-deep"
+            role="status"
+            aria-live="polite"
+          >
             Thank you! We will get back to you within 24 hours.
           </p>
         ) : null}

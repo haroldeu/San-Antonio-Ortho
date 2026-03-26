@@ -29,8 +29,12 @@ export function BookingForm() {
   const [servicesError, setServicesError] = useState<string | null>(null);
 
   const serviceOptions = useMemo(
-    () => availableServices.map((service) => ({ slug: service.slug, title: service.title })),
-    [availableServices]
+    () =>
+      availableServices.map((service) => ({
+        slug: service.slug,
+        title: service.title,
+      })),
+    [availableServices],
   );
 
   useEffect(() => {
@@ -112,7 +116,10 @@ export function BookingForm() {
       setStatus("success");
       setFormData(initialState);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      const message =
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again.";
       setStatus("error");
       setErrorMessage(message);
     }
@@ -120,9 +127,16 @@ export function BookingForm() {
 
   return (
     <Card>
-      <form onSubmit={handleSubmit} className="space-y-4" aria-label="Booking form">
+      <form
+        onSubmit={handleSubmit}
+        className="space-y-4"
+        aria-label="Booking form"
+      >
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="booking-name">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="booking-name"
+          >
             Full name *
           </label>
           <Input
@@ -135,7 +149,10 @@ export function BookingForm() {
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="text-sm font-medium text-slate" htmlFor="booking-email">
+            <label
+              className="text-sm font-medium text-slate"
+              htmlFor="booking-email"
+            >
               Email address *
             </label>
             <Input
@@ -148,7 +165,10 @@ export function BookingForm() {
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-slate" htmlFor="booking-phone">
+            <label
+              className="text-sm font-medium text-slate"
+              htmlFor="booking-phone"
+            >
               Phone number *
             </label>
             <Input
@@ -161,7 +181,10 @@ export function BookingForm() {
           </div>
         </div>
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="booking-service">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="booking-service"
+          >
             Service *
           </label>
           <select
@@ -180,14 +203,21 @@ export function BookingForm() {
             ))}
           </select>
           {servicesError ? (
-            <p className="mt-1 text-xs text-primary-deep" role="status" aria-live="polite">
+            <p
+              className="mt-1 text-xs text-primary-deep"
+              role="status"
+              aria-live="polite"
+            >
               {servicesError}
             </p>
           ) : null}
         </div>
         <div className="grid gap-4 md:grid-cols-2">
           <div>
-            <label className="text-sm font-medium text-slate" htmlFor="booking-date">
+            <label
+              className="text-sm font-medium text-slate"
+              htmlFor="booking-date"
+            >
               Preferred date *
             </label>
             <Input
@@ -199,7 +229,10 @@ export function BookingForm() {
             />
           </div>
           <div>
-            <label className="text-sm font-medium text-slate" htmlFor="booking-time">
+            <label
+              className="text-sm font-medium text-slate"
+              htmlFor="booking-time"
+            >
               Preferred time
             </label>
             <Input
@@ -211,7 +244,10 @@ export function BookingForm() {
           </div>
         </div>
         <div>
-          <label className="text-sm font-medium text-slate" htmlFor="booking-notes">
+          <label
+            className="text-sm font-medium text-slate"
+            htmlFor="booking-notes"
+          >
             Notes
           </label>
           <Textarea
@@ -222,11 +258,19 @@ export function BookingForm() {
             placeholder="Tell us anything we should know before your visit."
           />
         </div>
-        <Button type="submit" className="w-full" disabled={status === "loading"}>
+        <Button
+          type="submit"
+          className="w-full"
+          disabled={status === "loading"}
+        >
           {status === "loading" ? "Submitting..." : "Request appointment"}
         </Button>
         {status === "success" ? (
-          <p className="text-sm text-primary-deep" role="status" aria-live="polite">
+          <p
+            className="text-sm text-primary-deep"
+            role="status"
+            aria-live="polite"
+          >
             Request received! We will confirm your appointment shortly.
           </p>
         ) : null}
