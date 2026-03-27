@@ -7,14 +7,18 @@ export function Footer() {
     <footer className="border-t border-border bg-white/70">
       <Container className="grid gap-8 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <h3 className="font-heading text-2xl font-semibold text-slate">{clinicInfo.name}</h3>
+          <h3 className="font-heading text-2xl font-semibold text-slate">
+            {clinicInfo.name}
+          </h3>
           <p className="mt-3 text-sm text-muted">
-            "Always gentle, always kind. We're here to help."
+            &quot;Always gentle, always kind. We&apos;re here to help.&quot;
           </p>
           <p className="mt-4 text-sm text-muted">{clinicInfo.address}</p>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">Explore</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+            Explore
+          </h4>
           <ul className="mt-4 space-y-2 text-sm text-slate">
             {navigationLinks.map((link) => (
               <li key={link.href}>
@@ -31,13 +35,13 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">Contact</h4>
+          <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
+            Contact
+          </h4>
           <ul className="mt-4 space-y-2 text-sm text-slate">
             <li>{clinicInfo.phone}</li>
             <li>
-              <Link href={clinicInfo.fbpage.url}>
-                {clinicInfo.fbpage.name}
-              </Link>
+              <Link href={clinicInfo.fbpage.url}>{clinicInfo.fbpage.name}</Link>
             </li>
             <li>{clinicInfo.email}</li>
           </ul>
@@ -51,7 +55,8 @@ export function Footer() {
         </div>
       </Container>
       <div className="border-t border-border py-4 text-center text-xs text-muted">
-        © {new Date().getFullYear()} St. Anthony Dental Clinic. All rights reserved.
+        © {new Date().getFullYear()} St. Anthony Dental Clinic. All rights
+        reserved.
       </div>
     </footer>
   );
