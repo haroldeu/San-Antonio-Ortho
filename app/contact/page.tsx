@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ContactForm } from "@/components/forms/ContactForm";
@@ -22,10 +23,18 @@ export default function ContactPage() {
               Clinic information
             </h3>
             <div className="mt-4 space-y-2 text-sm text-muted">
-              <p>{clinicInfo.address}</p>
               <p>{clinicInfo.phone}</p>
-              <p>{clinicInfo.landline}</p>
+              <p>
+                <Link
+                  href={clinicInfo.fbpage.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {clinicInfo.fbpage.name}
+                </Link>
+              </p>
               <p>{clinicInfo.email}</p>
+              <p>{clinicInfo.address}</p>
             </div>
           </Card>
           <Card>

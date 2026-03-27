@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <h3 className="font-heading text-2xl font-semibold text-slate">{clinicInfo.name}</h3>
           <p className="mt-3 text-sm text-muted">
-            Premium dental care that feels warm, calm, and confidently professional.
+            "Always gentle, always kind. We're here to help."
           </p>
           <p className="mt-4 text-sm text-muted">{clinicInfo.address}</p>
         </div>
@@ -34,7 +34,11 @@ export function Footer() {
           <h4 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">Contact</h4>
           <ul className="mt-4 space-y-2 text-sm text-slate">
             <li>{clinicInfo.phone}</li>
-            <li>{clinicInfo.landline}</li>
+            <li>
+              <Link href={clinicInfo.fbpage.url}>
+                {clinicInfo.fbpage.name}
+              </Link>
+            </li>
             <li>{clinicInfo.email}</li>
           </ul>
           <div className="mt-4 text-xs text-muted">

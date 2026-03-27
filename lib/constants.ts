@@ -1,9 +1,13 @@
 ﻿export const clinicInfo = {
   name: "St. Anthony Dental Clinic",
-  address: "Quezon St. Brgy. 4 Calauag, Quezon",
-  phone: "+63 917 555 0123",
-  landline: "(02) 8123 4567",
-  email: "hello@stanthonydental.com",
+  address: "Quezon St. cor. Sct. Arugilles, Calauag, Quezon",
+  phone: "+63 912 653 1953",
+  // landline: "(02) 8123 4567",
+  fbpage: {
+    name: "San Antonio Ortho",
+    url: "https://www.facebook.com/ani.mendoza.1004",
+  },
+  email: "st.anthonydental@gmail.com",
   hours: [
     { label: "Monday - Saturday", value: "9:00 AM - 4:00 PM" },
     { label: "Sunday", value: "Closed" },
