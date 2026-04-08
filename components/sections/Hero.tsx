@@ -27,15 +27,25 @@ export function Hero() {
             variants={fadeUp}
             className="font-heading text-4xl font-semibold text-slate md:text-5xl"
           >
-            Premium dental care that feels calm, clean, and confidently professional.
+            Premium dental care that feels calm, clean, and confidently
+            professional.
           </motion.h1>
-          <motion.p variants={fadeUp} className="max-w-xl text-base text-muted md:text-lg">
-            St. Anthony Dental Clinic blends advanced dental technology with warm, personalized care.
-            From preventive checkups to restorative treatments, we keep every visit comfortable.
+          <motion.p
+            variants={fadeUp}
+            className="max-w-xl text-base text-muted md:text-lg"
+          >
+            St. Anthony Dental Clinic blends advanced dental technology with
+            warm, personalized care. From preventive checkups to restorative
+            treatments, we keep every visit comfortable.
           </motion.p>
           <motion.div variants={fadeUp} className="flex flex-wrap gap-4">
             <Link href="/book">
               <Button size="lg">Book Appointment</Button>
+            </Link>
+            <Link href="/certificate">
+              <Button size="lg" variant="secondary">
+                Request Certificate
+              </Button>
             </Link>
             <Link href="tel:+639175550123">
               <Button size="lg" variant="secondary">
@@ -57,7 +67,9 @@ export function Hero() {
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted">
                 Next Available
               </p>
-              <p className="font-heading text-2xl font-semibold text-slate">Today, 2:30 PM</p>
+              <p className="font-heading text-2xl font-semibold text-slate">
+                Today, 2:30 PM
+              </p>
               <p className="text-sm text-muted">
                 Secure your preferred time with a fast online request.
               </p>

@@ -86,6 +86,15 @@ SMTP_USER=your-smtp-username
 SMTP_PASS=your-smtp-password
 MAIL_FROM=clinic@your-domain.com
 MAIL_TO=you@your-domain.com
+SENT_TO=certificate@your-domain.com
+```
+
+- Supabase authentication is required for admin panel access:
+
+```bash
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key (server-side only)
 ```
 
 Database (example)
@@ -98,6 +107,26 @@ docker-compose up -d
 npm run migrate
 npm run seed
 ```
+
+- For Supabase:
+
+1. Apply the certificate request schema: [supabase/migrations/20260408_create_certificate_requests.sql](supabase/migrations/20260408_create_certificate_requests.sql)
+2. Apply the admin users schema: [supabase/migrations/20260408_create_admin_users.sql](supabase/migrations/20260408_create_admin_users.sql)
+3. Create an admin user via the Supabase dashboard:
+   - Sign up for a Supabase account at your instance
+   - Navigate to Auth → Users and create a new user (or use an existing admin account)
+   - Copy the user's UUID from the auth.users table
+   - Go to the SQL Editor and run:
+   ```sql
+   INSERT INTO public.admin_users (auth_id, email, role, is_active)
+   VALUES ('USER_UUID_HERE', 'admin@example.com', 'super_admin', true);
+   ```
+   - Replace `USER_UUID_HERE` with the actual UUID from step 3
+4. To access the admin panel: Go to `/admin/certificates`, enter your email and password, and click Sign In
+
+- The app expects:
+  - A `certificate_requests` table with customer fields, `admin_fields` JSON, `pdf_url`, and `status` columns
+  - An `admin_users` table linking Supabase auth users to admin roles
 
 Run (example)
 

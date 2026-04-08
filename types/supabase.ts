@@ -9,6 +9,36 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      admin_users: {
+        Row: {
+          id: string;
+          auth_id: string;
+          email: string;
+          role: 'admin' | 'super_admin';
+          created_at: string;
+          created_by_id: string | null;
+          is_active: boolean;
+        };
+        Insert: {
+          id?: string;
+          auth_id: string;
+          email: string;
+          role?: 'admin' | 'super_admin';
+          created_at?: string;
+          created_by_id?: string | null;
+          is_active?: boolean;
+        };
+        Update: {
+          id?: string;
+          auth_id?: string;
+          email?: string;
+          role?: 'admin' | 'super_admin';
+          created_at?: string;
+          created_by_id?: string | null;
+          is_active?: boolean;
+        };
+        Relationships: [];
+      };
       appointment_requests: {
         Row: {
           id: string;
@@ -52,7 +82,7 @@ export type Database = {
             columns: ["service.id"];
             referencedRelation: "service";
             referencedColumns: ["id"];
-          }
+          },
         ];
       };
       contact_messages: {
@@ -82,6 +112,42 @@ export type Database = {
           phone?: string | null;
           message?: string;
           status?: string | null;
+        };
+        Relationships: [];
+      };
+      certificate_requests: {
+        Row: {
+          id: string;
+          created_at: string;
+          name: string;
+          date_of_birth: string;
+          age: number;
+          address: string;
+          admin_fields: Json | null;
+          pdf_url: string | null;
+          status: string;
+        };
+        Insert: {
+          id?: string;
+          created_at?: string;
+          name: string;
+          date_of_birth: string;
+          age: number;
+          address: string;
+          admin_fields?: Json | null;
+          pdf_url?: string | null;
+          status?: string;
+        };
+        Update: {
+          id?: string;
+          created_at?: string;
+          name?: string;
+          date_of_birth?: string;
+          age?: number;
+          address?: string;
+          admin_fields?: Json | null;
+          pdf_url?: string | null;
+          status?: string;
         };
         Relationships: [];
       };

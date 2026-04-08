@@ -1,6 +1,6 @@
 ﻿export const clinicInfo = {
   name: "St. Anthony Dental Clinic",
-  address: "Quezon St. cor. Sct. Arugilles, Calauag, Quezon",
+  address: "Quezon St. cor. Sct. Arguilles, Calauag, Quezon",
   phone: "+63 912 653 1953",
   // landline: "(02) 8123 4567",
   fbpage: {
@@ -17,6 +17,7 @@
 export const navigationLinks = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Request Certificate", href: "/certificate" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

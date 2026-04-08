@@ -17,12 +17,19 @@ type AppointmentEmailPayload = {
   notes: string | null;
 };
 
+type CertificateRequestEmailPayload = {
+  name: string;
+  dateOfBirth: string;
+  age: number;
+  address: string;
+};
+
 function getMailerConfig() {
   const host = process.env.SMTP_HOST;
   const port = Number(process.env.SMTP_PORT ?? "587");
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
-  const to = process.env.MAIL_TO;
+  const to = process.env.SENT_TO ?? process.env.MAIL_TO;
   const from = process.env.MAIL_FROM ?? user;
 
   if (!host || !user || !pass || !to || !from || Number.isNaN(port)) {
@@ -37,7 +44,7 @@ async function sendMail(subject: string, text: string, html: string) {
 
   if (!config) {
     throw new Error(
-      "Email is not configured. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO, and MAIL_FROM.",
+      "Email is not configured. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, MAIL_TO or SENT_TO, and MAIL_FROM.",
     );
   }
 
@@ -116,6 +123,32 @@ export async function sendAppointmentEmail(payload: AppointmentEmailPayload) {
     <p><strong>Preferred time:</strong> ${timeLine}</p>
     <p><strong>Notes:</strong></p>
     <p>${notesLine.replace(/\n/g, "<br />")}</p>
+  `;
+
+  await sendMail(subject, text, html);
+}
+
+export async function sendCertificateRequestEmail(
+  payload: CertificateRequestEmailPayload,
+) {
+  const subject = `New Certificate Request: ${payload.name}`;
+
+  const text = [
+    "New certificate request",
+    "",
+    `Name: ${payload.name}`,
+    `Date of birth: ${payload.dateOfBirth}`,
+    `Age: ${payload.age}`,
+    `Address: ${payload.address}`,
+  ].join("\n");
+
+  const html = `
+    <h2>New certificate request</h2>
+    <p><strong>Name:</strong> ${payload.name}</p>
+    <p><strong>Date of birth:</strong> ${payload.dateOfBirth}</p>
+    <p><strong>Age:</strong> ${payload.age}</p>
+    <p><strong>Address:</strong></p>
+    <p>${payload.address.replace(/\n/g, "<br />")}</p>
   `;
 
   await sendMail(subject, text, html);

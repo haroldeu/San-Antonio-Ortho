@@ -145,6 +145,11 @@ export function Navbar() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <Link href="/admin/certificates/" className="hidden sm:inline-flex">
+            <Button size="sm" variant="secondary">
+              Admin
+            </Button>
+          </Link>
           <Link href="/book" className="hidden sm:inline-flex">
             <Button size="sm">Book Appointment</Button>
           </Link>
@@ -270,6 +275,21 @@ export function Navbar() {
                       style={{ transitionDelay: `${navigationLinks.length * 60}ms` }}
                     >
                       Book Appointment
+                    </Button>
+                  </Link>
+                  <Link href="/admin/certificates/" onClick={() => setIsOpen(false)}>
+                    <Button
+                      size="sm"
+                      variant="secondary"
+                      className={cn(
+                        "w-full transition-all duration-300",
+                        isOpen
+                          ? "translate-x-0 opacity-100"
+                          : "translate-x-2 opacity-0",
+                      )}
+                      style={{ transitionDelay: `${(navigationLinks.length + 1) * 60}ms` }}
+                    >
+                      Admin Access
                     </Button>
                   </Link>
                 </nav>
