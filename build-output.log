@@ -1,0 +1,228 @@
+
+> st-anthony-dental@0.1.0 build
+> next build
+
+  Gû¦ Next.js 14.2.5
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ G£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/20) ...
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/contact". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/contact". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/book". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/book". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/certificate". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/certificate". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+   Generating static pages (5/20) 
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/about". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/about". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+   Generating static pages (10/20) 
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services/[slug]". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services/crowns-bridges". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services/[slug]". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services/gentle-extractions". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services/[slug]". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services/preventive-care". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/admin/certificates". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/admin/certificates". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+   Generating static pages (15/20) 
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services/[slug]". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services/orthodontic-consults". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services/[slug]". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services/aesthetic-whitening". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/services/[slug]". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/services/tooth-colored-fillings". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G¿» useSearchParams() should be wrapped in a suspense boundary at page "/404". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at l (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:11935)
+    at c (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\589.js:1:22885)
+    at n (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\.next\server\chunks\417.js:1:5940)
+    at nj (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:46251)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:47571)
+    at nM (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:61546)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64546)
+    at nB (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:67538)
+    at nD (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:66680)
+    at nN (C:\Users\John Harold\Documents\GitHub\San-Antonio-Ortho\node_modules\next\dist\compiled\next-server\app-page.runtime.prod.js:12:64853)
+System.Management.Automation.RemoteException
+Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+System.Management.Automation.RemoteException
+ G£ô Generating static pages (20/20)
+System.Management.Automation.RemoteException
+> Export encountered errors on following paths:
+	/_not-found/page: /_not-found
+	/about/page: /about
+	/admin/certificates/page: /admin/certificates
+	/book/page: /book
+	/certificate/page: /certificate
+	/contact/page: /contact
+	/page: /
+	/services/[slug]/page: /services/aesthetic-whitening
+	/services/[slug]/page: /services/crowns-bridges
+	/services/[slug]/page: /services/gentle-extractions
+	/services/[slug]/page: /services/orthodontic-consults
+	/services/[slug]/page: /services/preventive-care
+	/services/[slug]/page: /services/tooth-colored-fillings
+	/services/page: /services

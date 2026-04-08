@@ -1,6 +1,7 @@
 ﻿import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Playfair_Display, Inter } from "next/font/google";
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
 import { NavigationLoadingCursor } from "@/components/shared/NavigationLoadingCursor";
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} font-body`}
       >
-        <NavigationLoadingCursor />
+        <Suspense fallback={null}>
+          <NavigationLoadingCursor />
+        </Suspense>
         <Navbar />
         <main className="pt-20">{children}</main>
         <Footer />
