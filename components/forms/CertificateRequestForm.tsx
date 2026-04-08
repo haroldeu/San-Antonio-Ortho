@@ -16,6 +16,31 @@ const initialState = {
 
 type FormState = typeof initialState;
 
+const calculateAgeFromDate = (dateOfBirth: string) => {
+  if (!dateOfBirth) return "";
+
+  const [year, month, day] = dateOfBirth.split("-").map(Number);
+  if (!year || !month || !day) return "";
+
+  const dob = new Date(year, month - 1, day);
+  if (Number.isNaN(dob.getTime())) return "";
+
+  const today = new Date();
+  if (dob > today) return "";
+
+  let age = today.getFullYear() - dob.getFullYear();
+  const monthDifference = today.getMonth() - dob.getMonth();
+
+  if (
+    monthDifference < 0 ||
+    (monthDifference === 0 && today.getDate() < dob.getDate())
+  ) {
+    age -= 1;
+  }
+
+  return age >= 0 ? String(age) : "";
+};
+
 export function CertificateRequestForm() {
   const [formData, setFormData] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<
@@ -27,6 +52,14 @@ export function CertificateRequestForm() {
 
   const handleChange = (field: keyof FormState, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleDateOfBirthChange = (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      dateOfBirth: value,
+      age: calculateAgeFromDate(value),
+    }));
   };
 
   const validate = () => {
@@ -128,9 +161,7 @@ export function CertificateRequestForm() {
               id="certificate-dob"
               type="date"
               value={formData.dateOfBirth}
-              onChange={(event) =>
-                handleChange("dateOfBirth", event.target.value)
-              }
+              onChange={(event) => handleDateOfBirthChange(event.target.value)}
               aria-invalid={!!errors.dateOfBirth}
             />
             {errors.dateOfBirth ? (
