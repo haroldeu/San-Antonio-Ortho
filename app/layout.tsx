@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Navbar } from "@/components/shared/Navbar";
 import { Footer } from "@/components/shared/Footer";
+import { NavigationLoadingCursor } from "@/components/shared/NavigationLoadingCursor";
 import { basePath } from "@/lib/basePath";
 
 const headingFont = Playfair_Display({
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} font-body`}
       >
+        <NavigationLoadingCursor />
         <Navbar />
         <main className="pt-20">{children}</main>
         <Footer />
