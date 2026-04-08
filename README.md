@@ -70,11 +70,11 @@ yarn install
 
 Environment
 
-- Copy the environment example and fill in secrets:
+- Copy the environment example to `.env.local` and fill in values there:
 
 ```bash
-cp .env.example .env
-# edit .env and set DB connection, API keys, and other secrets
+cp .env.example .env.local
+# edit .env.local and set DB connection, API keys, and other secrets
 ```
 
 - Email notifications for form submissions require these variables:

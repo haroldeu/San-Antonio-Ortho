@@ -5,7 +5,9 @@ import type { Database } from "@/types/supabase";
 
 type ServiceRow = Database["public"]["Tables"]["service"]["Row"];
 
-const contentBySlug = new Map(contentServices.map((service) => [service.slug, service]));
+const contentBySlug = new Map(
+  contentServices.map((service) => [service.slug, service]),
+);
 
 const formatDuration = (min: number, max: number) => {
   if (min === max) {
@@ -46,7 +48,11 @@ export async function getServices() {
     .order("created_at", { ascending: true });
 
   if (error) {
-    throw new Error("Unable to load services.");
+    console.error(
+      "Supabase unavailable in getServices; using local service data.",
+      error,
+    );
+    return contentServices;
   }
 
   if (!data || data.length === 0) {
@@ -64,7 +70,12 @@ export async function getServiceBySlug(slug: string) {
     .maybeSingle();
 
   if (error) {
-    throw new Error("Unable to load the requested service.");
+    console.error(
+      "Supabase unavailable in getServiceBySlug; using local service data.",
+      error,
+    );
+
+    return contentServices.find((service) => service.slug === slug) ?? null;
   }
 
   if (!data) {
