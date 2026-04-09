@@ -5,7 +5,7 @@ import {
   Sparkles,
   HandHeart,
   Lightbulb,
-  Users
+  Users,
 } from "lucide-react";
 
 import { Container } from "@/components/ui/Container";
@@ -17,38 +17,38 @@ const coreValues = [
     title: "Compassion",
     description:
       "We treat every patient with kindness, empathy, and understanding, ensuring a comfortable and positive experience.",
-    icon: Heart
+    icon: Heart,
   },
   {
     title: "Excellence",
     description:
       "We strive for the highest standards in dental care through continuous learning, modern technology, and skilled practice.",
-    icon: Sparkles
+    icon: Sparkles,
   },
   {
     title: "Integrity",
     description:
       "We uphold honesty, transparency, and ethical practices in all our services and patient interactions.",
-    icon: ShieldCheck
+    icon: ShieldCheck,
   },
   {
     title: "Patient-Centered Care",
     description:
       "We prioritize the needs, safety, and satisfaction of our patients in every treatment we provide.",
-    icon: HandHeart
+    icon: HandHeart,
   },
   {
     title: "Innovation",
     description:
       "We embrace advancements in dental technology to improve efficiency, accuracy, and overall patient care.",
-    icon: Lightbulb
+    icon: Lightbulb,
   },
   {
     title: "Community Commitment",
     description:
       "We are dedicated to serving the community by promoting oral health awareness and providing accessible dental services.",
-    icon: Users
-  }
+    icon: Users,
+  },
 ];
 
 export default function AboutPage() {
